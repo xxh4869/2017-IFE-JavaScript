@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="aqi-input" type="text"><!--这里是innerHTML--></label>
+  <button id="button">确认填写</button>
+
+  <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+
+<script type="text/javascript">
+// 本任务完成的功能为：用户可以在输入框中输入任何内容，点击“确认填写”按钮后，用户输入的内容会显示在“您输入的值是”文字的右边
+(function() {
+  /*    
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的值，并显示在aqi-display中
+  */
+  var btn = document.getElementById('button');
+  var input = document.getElementById('aqi-input');
+  var display = document.getElementById('aqi-display');
+  // 为按钮绑定一个点击事件，点击按钮则运行匿名函数，将display的标签内容用input的值替代
+  btn.onclick = function(){
+    // innerHTML表示该标签内的内容，要求获取的值显示在标签中，因此用innerHTML 而不是value
+    // input获取的是文本框中的值，而input标签中的内容实际是空的，因此用的是value而不是innerHTML
+    display.innerHTML = input.value;
+  }
+
+})();
+
+</script>
+</body>
+</html>
